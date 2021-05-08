@@ -1,0 +1,64 @@
+@use "../../../utils/utils.scss";
+
+:host {
+  display: block;
+
+  .input-container {
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+
+    .input {
+      align-items: inherit;
+      display: inherit;
+      width: 22rem;
+      column-gap: 0.6rem;
+      padding-left: 1.2rem;
+      padding-right: 1.2rem;
+      transition: 0.5s ease;
+      cursor: text;
+
+      &:focus-within {
+        border-color: rgba(0, 132, 255, 0.5);
+      }
+
+      img {
+        transform: scale(0.9);
+        filter: saturate(10) brightness(0.9);
+      }
+
+      input {
+        flex: 1;
+        font-size: 1rem;
+        outline: none;
+        height: 100%;
+        color: utils.$title;
+
+        &::placeholder {
+          filter: opacity(0.5);
+        }
+      }
+    }
+
+    .input,
+    .grid-filter {
+      box-shadow: 0 0 2px rgba($color: #000000, $alpha: 0.1);
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+      height: 3rem;
+      background: utils.$white;
+      border: 1px solid #eee;
+    }
+
+    .grid-filter {
+      display: grid;
+      place-content: center;
+      width: 3rem;
+      cursor: pointer;
+
+      img {
+        filter: brightness(0.9);
+      }
+    }
+  }
+}

@@ -1,0 +1,52 @@
+@use "../../../utils/utils.scss";
+
+:host {
+  display: block;
+
+  .tabs-container {
+    display: flex;
+    border-bottom: 1px solid rgb(228, 228, 228);
+
+    ul {
+      list-style: none;
+      display: flex;
+      width: 100%;
+      column-gap: 2rem;
+
+      li {
+        padding: 0.6rem 0;
+        color: utils.$gray;
+        cursor: pointer;
+        transition: 0.5s ease;
+
+        &:hover {
+          filter: brightness(0.8);
+        }
+      }
+    }
+
+    .tab-view-options {
+      display: flex;
+      align-items: center;
+      column-gap: 0.5rem;
+
+      label {
+        height: auto;
+        transform: scale(0.8);
+        display: block;
+        cursor: pointer;
+
+        input[type="radio"] {
+          display: none;
+          &:checked + img {
+            filter: saturate(25) brightness(0.8);
+          }
+        }
+
+        &:last-child {
+          transform: translateY(-0.02rem) scale(0.8);
+        }
+      }
+    }
+  }
+}

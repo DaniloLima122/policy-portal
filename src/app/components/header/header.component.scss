@@ -1,0 +1,86 @@
+@use "../../../utils/utils.scss" as utils;
+
+header {
+  background-color: utils.$very-dark-blue;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 10vh;
+
+  & .logo {
+    background-color: utils.$blue;
+    height: 100%;
+    width: 5%;
+    display: grid;
+    place-content: center;
+
+    & span {
+      font-size: 1.2rem;
+      color: utils.$white;
+    }
+  }
+
+  & nav {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+
+    & .breadcrumb {
+      display: flex;
+      align-items: center;
+      column-gap: 0.5rem;
+
+      :first-child {
+        color: #aeb6be;
+      }
+
+      :last-child {
+        color: utils.$white;
+      }
+
+      .breadcrumb-arrow {
+        transform: rotate(270deg) scale(0.5);
+        filter: opacity(0.7);
+      }
+    }
+
+    & .menu-options {
+      display: flex;
+      column-gap: 1.1rem;
+      align-items: center;
+
+      span {
+        display: block;
+        transform: scale(0.9);
+
+        &:last-child {
+          margin-left: 2.5rem;
+        }
+      }
+
+      .notifications {
+        position: relative;
+
+        &::after {
+          content: "3";
+          width: 0.8rem;
+          height: 0.8rem;
+          color: utils.$white;
+          font-size: 0.65rem;
+          border-radius: 50%;
+          background: utils.$red;
+          position: absolute;
+          display: block;
+          top: 0;
+          right: 0;
+          text-align: center;
+          transform: translate(6px, -7px);
+          border: 2px solid utils.$very-dark-blue;
+        }
+      }
+    }
+  }
+}

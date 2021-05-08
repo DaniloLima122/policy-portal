@@ -1,0 +1,43 @@
+@use "../utils/utils.scss" as utils;
+
+.container {
+  background-color: utils.$very-light-gray;
+  min-height: 100vh;
+  width: 100%;
+
+  .policy-container {
+    min-height: calc(100vh - 10vh);
+    display: flex;
+    justify-content: center;
+    padding-top: 4rem;
+
+    .policy-content {
+      width: 79%;
+      margin: 0 auto;
+
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        h1 {
+          font-weight: 300;
+          font-size: 2.5rem;
+          color: utils.$title;
+        }
+      }
+
+      m-tab {
+        margin-top: 2rem;
+
+        m-tab-item {
+          padding: 2rem 0;
+          display: flex;
+          flex-direction: column;
+          row-gap: 2rem;
+          justify-content: space-around;
+        }
+      }
+    }
+  }
+}
