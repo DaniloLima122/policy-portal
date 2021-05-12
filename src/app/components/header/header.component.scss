@@ -55,6 +55,15 @@ header {
       span {
         display: block;
         transform: scale(0.9);
+        cursor: pointer;
+
+        img {
+          transition: 0.3s ease;
+
+          &:hover {
+            filter: brightness(1.2);
+          }
+        }
 
         &:last-child {
           margin-left: 2.5rem;
