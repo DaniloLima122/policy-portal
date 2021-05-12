@@ -12,13 +12,11 @@
   }
 
   .policy-container {
-    min-height: calc(100vh - 10vh);
-    display: flex;
-    justify-content: center;
+    // min-height: calc(100vh - 10vh);
     padding-top: 8rem;
-
+    overflow-x: hidden;
     .policy-content {
-      width: 79%;
+      max-width: 79%;
       margin: 0 auto;
 
       header {

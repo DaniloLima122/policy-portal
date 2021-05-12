@@ -7,11 +7,11 @@
     </ul>
     <div class="tab-view-options">
       <label for="grid-view">
-        <input type="radio" id="grid-view" name="view-type" checked>
+        <input type="radio" id="grid-view" name="view-type" checked (change)="changeCardsView('grid')">
         <img src="../../../assets/icons/grid4x4.svg" alt="Grid4x4 icon">
       </label>
       <label for="list-view">
-        <input type="radio" id="list-view" name="view-type">
+        <input type="radio" id="list-view" name="view-type" (change)="changeCardsView('list')">
         <img src="../../../assets/icons/menu.svg" alt="List icon">
       </label>
     </div>

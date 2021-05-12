@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'policy-portal';
+
+  currentLayout: string = 'grid';
+
+  changeCardsLayout(layout: string) {
+    this.currentLayout = layout;
+  }
+
 }

@@ -33,30 +33,30 @@
         <h1>Policy Portal</h1>
         <m-input></m-input>
       </header>
-      <m-tab>
+      <m-tab (changeLayout)="changeCardsLayout($event)">
         <m-tab-item title="ALL">
-          <m-cards-container name="Bookmarked">
+          <m-cards-container name="Bookmarked" [cardsLayout]="currentLayout">
             <ng-container [ngTemplateOutlet]="bookmarked"></ng-container>
           </m-cards-container>
 
-          <m-cards-container name="Pending">
+          <m-cards-container name="Pending" [cardsLayout]="currentLayout">
             <ng-container [ngTemplateOutlet]="pending"></ng-container>
           </m-cards-container>
 
-          <m-cards-container name="Attested">
+          <m-cards-container name="Attested" [cardsLayout]="currentLayout">
             <ng-container [ngTemplateOutlet]="attested"></ng-container>
           </m-cards-container>
         </m-tab-item>
 
 
         <m-tab-item title="PENDING">
-          <m-cards-container name="Pending">
+          <m-cards-container name="Pending" [cardsLayout]="currentLayout">
             <ng-container [ngTemplateOutlet]="pending"></ng-container>
           </m-cards-container>
         </m-tab-item>
 
         <m-tab-item title="ATTESTED">
-          <m-cards-container name="Attested">
+          <m-cards-container name="Attested" [cardsLayout]="currentLayout">
             <ng-container [ngTemplateOutlet]="attested"></ng-container>
           </m-cards-container>
         </m-tab-item>

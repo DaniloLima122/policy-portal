@@ -12,8 +12,41 @@
   .cards-container {
     width: inherit;
     margin-top: 2rem;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
     gap: 1.8rem;
+    display: grid;
+
+    &[cardsLayout="grid"] {
+      grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    }
+
+    &[cardsLayout="list"] {
+      &::ng-deep m-card {
+        min-height: auto;
+        grid-template-columns: 1fr;
+
+        .card {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          column-gap: 2rem;
+          padding: 1rem 2rem;
+
+          .tooltip {
+            max-width: 8%;
+          }
+
+          header {
+            transform: none;
+          }
+
+          .content {
+            display: flex;
+            align-items: center;
+            column-gap: 1rem;
+            flex: 1;
+          }
+        }
+      }
+    }
   }
 }

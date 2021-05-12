@@ -1,5 +1,10 @@
-import { AfterContentInit, Component, ContentChildren, QueryList } from '@angular/core';
+import { AfterContentInit, Component, ContentChildren, EventEmitter, Output, QueryList } from '@angular/core';
 import { TabItemComponent } from './tab-item/tab-item.component';
+
+enum cardsViewOptions {
+  GRID = "grid",
+  LIST = "list",
+}
 
 @Component({
   selector: 'm-tab',
@@ -12,6 +17,9 @@ export class TabComponent implements AfterContentInit {
   tabs: QueryList<TabItemComponent>;
 
   private thereTabSelected = false;
+
+  @Output()
+  changeLayout = new EventEmitter<cardsViewOptions>();
 
   constructor() { }
 
@@ -38,4 +46,10 @@ export class TabComponent implements AfterContentInit {
     return this.thereTabSelected;
   }
 
+  changeCardsView(cardView: string) {
+
+    const viewSelected = cardsViewOptions[cardView.toUpperCase()];
+    this.changeLayout.emit(viewSelected);
+    console.log(cardView)
+  }
 }

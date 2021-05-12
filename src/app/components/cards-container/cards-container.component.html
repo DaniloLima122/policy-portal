@@ -1,7 +1,7 @@
 <section class="cards-section">
   <h1>{{name}}</h1>
 
-  <div class="cards-container" [@staggerCards]>
+  <div class="cards-container" [@staggerCards]="cardsLayout" [attr.cardsLayout]="cardsLayout">
     <ng-content></ng-content>
   </div>
 

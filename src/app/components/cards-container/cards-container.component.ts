@@ -7,13 +7,12 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./cards-container.component.scss'],
   animations: [
     trigger('staggerCards', [
-      transition("* => *", [
+      transition("* <=> *", [
         query('m-card', [
           style({ opacity: 0, transform: 'translateY(1rem)' }),
           stagger(100, [
             animate('.7s .2s ease', style({ opacity: 1, transform: 'translateY(0)' }))
           ]),
-
         ])
       ])
     ])
@@ -22,7 +21,7 @@ import { Component, Input } from '@angular/core';
 export class CardsContainerComponent {
 
   @Input() name;
-
+  @Input() cardsLayout;
 
   constructor() { }
 
