@@ -12,7 +12,8 @@
   .cards-container {
     width: inherit;
     margin-top: 2rem;
-    display: flex;
-    column-gap: 1.8rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    gap: 1.8rem;
   }
 }

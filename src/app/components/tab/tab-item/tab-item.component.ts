@@ -9,9 +9,19 @@ export class TabItemComponent implements OnInit {
 
   @Input() title;
 
+  private isSelected = false;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  get tabIsSelected() {
+    return this.isSelected;
+  }
+
+  set tabIsSelected(isSelected: boolean) {
+    this.isSelected = isSelected;
   }
 
 }

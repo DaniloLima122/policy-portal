@@ -1,7 +1,7 @@
 <ng-template #tabHeader>
   <div class="tabs-container">
     <ul>
-      <li *ngFor="let tab of tabs">
+      <li *ngFor="let tab of tabs" (click)="selectTab(tab)" [ngClass]="{'--selected': tab.tabIsSelected}">
         {{tab.title}}
       </li>
     </ul>
@@ -19,6 +19,5 @@
 </ng-template>
 
 <ng-container [ngTemplateOutlet]="tabHeader"></ng-container>
-<main>
-  <ng-content></ng-content>
-</main>
+
+<ng-content></ng-content>

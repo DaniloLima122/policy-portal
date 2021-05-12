@@ -5,11 +5,17 @@
   min-height: 100vh;
   width: 100%;
 
+  m-header {
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+  }
+
   .policy-container {
     min-height: calc(100vh - 10vh);
     display: flex;
     justify-content: center;
-    padding-top: 4rem;
+    padding-top: 8rem;
 
     .policy-content {
       width: 79%;
@@ -29,14 +35,6 @@
 
       m-tab {
         margin-top: 2rem;
-
-        m-tab-item {
-          padding: 2rem 0;
-          display: flex;
-          flex-direction: column;
-          row-gap: 2rem;
-          justify-content: space-around;
-        }
       }
     }
   }

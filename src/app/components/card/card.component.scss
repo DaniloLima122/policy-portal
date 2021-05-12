@@ -8,11 +8,12 @@
   border: 1px solid #e0e3e6;
 
   .card {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
     height: 100%;
     width: 100%;
-    padding: 1rem 1.8rem;
+    padding: 1.1rem 1.8rem 1.4rem 1.8rem;
+    flex-direction: column;
+    justify-content: space-between;
     cursor: pointer;
     transition: box-shadow 0.5s ease;
     box-shadow: 0 3px 2px rgba($color: #4b4b4b, $alpha: 0.05);
@@ -23,13 +24,12 @@
     }
 
     header {
-      grid-column: 1 / 5;
       display: flex;
       column-gap: 1.3rem;
       height: 0;
       align-items: center;
       justify-content: flex-end;
-      transform: translateY(1.2rem);
+      transform: translateY(1rem);
 
       input[type="checkbox"] {
         display: none;
@@ -58,7 +58,7 @@
           transform: translateY(-2.7rem);
           background: utils.$very-dark-blue;
           padding: 0.5rem 0.5rem;
-          min-width: 69%;
+          min-width: 60%;
           color: utils.$white;
           border-radius: 3px;
           transition: 0.5s ease;
@@ -150,13 +150,13 @@
 
       .card-main-content {
         margin: 0.5rem 0;
+        flex: 1;
 
         label {
           color: utils.$blue;
           font-size: 0.8rem;
           line-height: 2rem;
         }
-
         p {
           color: utils.$title;
           font-size: 1.1rem;
@@ -164,7 +164,6 @@
       }
     }
     footer {
-      grid-column: 1 / 5;
       font-size: 0.8rem;
       font-style: italic;
       color: utils.$light-gray;

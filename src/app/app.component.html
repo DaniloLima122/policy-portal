@@ -1,3 +1,30 @@
+<ng-template #pending>
+  <m-card status="danger"></m-card>
+  <m-card status="danger"></m-card>
+  <m-card></m-card>
+  <m-card></m-card>
+  <m-card></m-card>
+  <m-card></m-card>
+  <m-card></m-card>
+</ng-template>
+
+<ng-template #attested>
+  <m-card status="success"></m-card>
+  <m-card status="success"></m-card>
+  <m-card status="success"></m-card>
+  <m-card status="success"></m-card>
+  <m-card status="success"></m-card>
+</ng-template>
+
+<ng-template #bookmarked>
+  <m-card></m-card>
+  <m-card></m-card>
+  <m-card></m-card>
+  <m-card></m-card>
+  <m-card></m-card>
+</ng-template>
+
+
 <div class="container">
   <m-header></m-header>
   <div class="policy-container">
@@ -9,25 +36,31 @@
       <m-tab>
         <m-tab-item title="ALL">
           <m-cards-container name="Bookmarked">
-            <m-card></m-card>
-            <m-card></m-card>
-            <m-card></m-card>
+            <ng-container [ngTemplateOutlet]="bookmarked"></ng-container>
           </m-cards-container>
+
           <m-cards-container name="Pending">
-            <m-card status="danger"></m-card>
-            <m-card status="danger"></m-card>
-            <m-card></m-card>
-            <m-card></m-card>
+            <ng-container [ngTemplateOutlet]="pending"></ng-container>
           </m-cards-container>
+
           <m-cards-container name="Attested">
-            <m-card status="success"></m-card>
-            <m-card status="success"></m-card>
+            <ng-container [ngTemplateOutlet]="attested"></ng-container>
           </m-cards-container>
         </m-tab-item>
-        <!-- <m-tab-i tem title="PENDING"></m-tab-i> -->
-        <!-- <m-tab-item title="ATTESTED"></m-tab-item> -->
+
+
+        <m-tab-item title="PENDING">
+          <m-cards-container name="Pending">
+            <ng-container [ngTemplateOutlet]="pending"></ng-container>
+          </m-cards-container>
+        </m-tab-item>
+
+        <m-tab-item title="ATTESTED">
+          <m-cards-container name="Attested">
+            <ng-container [ngTemplateOutlet]="attested"></ng-container>
+          </m-cards-container>
+        </m-tab-item>
       </m-tab>
     </div>
   </div>
-
 </div>

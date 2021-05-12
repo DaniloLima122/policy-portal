@@ -1,20 +1,40 @@
+import { Component, NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CardComponent } from '../card/card.component';
 
-import { CardsContainerComponent } from './cards-container.component';
+
+
+
+@Component({
+  selector: 'm-cards-container',
+  template: `
+    <div>
+      <m-card></m-card>
+      <m-card></m-card>
+      <m-card></m-card>
+    </div>
+  `
+})
+class CardsContainerMock {
+}
+
 
 describe('CardsContainerComponent', () => {
-  let component: CardsContainerComponent;
-  let fixture: ComponentFixture<CardsContainerComponent>;
+  let component: CardsContainerMock;
+  let fixture: ComponentFixture<CardsContainerMock>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CardsContainerComponent ]
+      declarations: [CardsContainerMock, CardComponent],
+      schemas: [NO_ERRORS_SCHEMA],
+      imports: [BrowserAnimationsModule]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CardsContainerComponent);
+    fixture = TestBed.createComponent(CardsContainerMock);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

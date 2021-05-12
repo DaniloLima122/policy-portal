@@ -1,7 +1,18 @@
+@use "./utils/utils.scss";
+
 * {
   border: 0;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Roboto";
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  background: utils.$light-gray;
+}
+
+::-webkit-scrollbar-thumb {
+  background: utils.$menu-icons-color;
 }

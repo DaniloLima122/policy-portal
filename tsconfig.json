@@ -2,11 +2,11 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": ".",
+    "baseUrl": "src",
     "paths": {
-      "@utils/*":["./src/utils/*"],
-      "@components/*":["./src/app/components/*"],
-      "assets/*":["./src/app/assets/*"],
+      "@utils/*":["utils/*"],
+      "@components/*":["app/components/*"],
+      "@assets/*":["app/assets/*"],
     },
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
@@ -20,9 +20,12 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "esModuleInterop": true,
+    "emitDecoratorMetadata": true,
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false
-  }
+  },
+
 }
