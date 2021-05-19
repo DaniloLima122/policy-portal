@@ -1,30 +1,3 @@
-<ng-template #pending>
-  <m-card status="danger"></m-card>
-  <m-card status="danger"></m-card>
-  <m-card></m-card>
-  <m-card></m-card>
-  <m-card></m-card>
-  <m-card></m-card>
-  <m-card></m-card>
-</ng-template>
-
-<ng-template #attested>
-  <m-card status="success"></m-card>
-  <m-card status="success"></m-card>
-  <m-card status="success"></m-card>
-  <m-card status="success"></m-card>
-  <m-card status="success"></m-card>
-</ng-template>
-
-<ng-template #bookmarked>
-  <m-card></m-card>
-  <m-card></m-card>
-  <m-card></m-card>
-  <m-card></m-card>
-  <m-card></m-card>
-</ng-template>
-
-
 <div class="container">
   <m-header></m-header>
   <div class="policy-container">
@@ -35,29 +8,29 @@
       </header>
       <m-tab (changeLayout)="changeCardsLayout($event)">
         <m-tab-item title="ALL">
-          <m-cards-container name="Bookmarked" [cardsLayout]="currentLayout">
-            <ng-container [ngTemplateOutlet]="bookmarked"></ng-container>
+          <m-cards-container name="Bookmarked" [cardsLayout]="currentLayout"
+            *ngIf="(cardsData.bookmark | async)?.length > 0" [cards]="cardsData.bookmark | async">
           </m-cards-container>
 
-          <m-cards-container name="Pending" [cardsLayout]="currentLayout">
-            <ng-container [ngTemplateOutlet]="pending"></ng-container>
+          <m-cards-container name="Pending" [cardsLayout]="currentLayout"
+            *ngIf="(cardsData.pending | async)?.length > 0" [cards]="cardsData.pending | async">
           </m-cards-container>
 
-          <m-cards-container name="Attested" [cardsLayout]="currentLayout">
-            <ng-container [ngTemplateOutlet]="attested"></ng-container>
+          <m-cards-container name="Attested" [cardsLayout]="currentLayout"
+            *ngIf="(cardsData.attested | async)?.length > 0" [cards]="cardsData.attested | async">
           </m-cards-container>
         </m-tab-item>
 
 
         <m-tab-item title="PENDING">
-          <m-cards-container name="Pending" [cardsLayout]="currentLayout">
-            <ng-container [ngTemplateOutlet]="pending"></ng-container>
+          <m-cards-container name="Pending" [cardsLayout]="currentLayout"
+            *ngIf="(cardsData.pending | async)?.length > 0" [cards]="cardsData.pending | async">
           </m-cards-container>
         </m-tab-item>
 
         <m-tab-item title="ATTESTED">
-          <m-cards-container name="Attested" [cardsLayout]="currentLayout">
-            <ng-container [ngTemplateOutlet]="attested"></ng-container>
+          <m-cards-container name="Attested" [cardsLayout]="currentLayout"
+            *ngIf="(cardsData.attested | async)?.length > 0" [cards]="cardsData.attested | async">
           </m-cards-container>
         </m-tab-item>
       </m-tab>

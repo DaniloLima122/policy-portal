@@ -11,7 +11,7 @@ import { Component, Input } from '@angular/core';
         query('m-card', [
           style({ opacity: 0, transform: 'translateY(1rem)' }),
           stagger(100, [
-            animate('.7s .2s ease', style({ opacity: 1, transform: 'translateY(0)' }))
+            animate('.4s ease', style({ opacity: 1, transform: 'translateY(0)' }))
           ]),
         ])
       ])
@@ -22,6 +22,8 @@ export class CardsContainerComponent {
 
   @Input() name;
   @Input() cardsLayout;
+
+  @Input() cards = [];
 
   constructor() { }
 

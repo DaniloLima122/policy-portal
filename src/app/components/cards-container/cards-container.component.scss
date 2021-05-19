@@ -7,6 +7,14 @@
   h1 {
     font-weight: 400;
     color: utils.$title;
+    opacity: 0;
+    animation: animateTitle .5s ease forwards;
+
+    @keyframes animateTitle {
+      to {
+        opacity: 1;
+      }
+    }
   }
 
   .cards-container {
@@ -29,7 +37,7 @@
           flex-direction: row;
           align-items: center;
           column-gap: 2rem;
-          padding: 1rem 2rem;
+          padding: 0.4rem 2rem 0.5rem;
 
           .tooltip {
             max-width: 8%;

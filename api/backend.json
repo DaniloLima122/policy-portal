@@ -1,0 +1,52 @@
+{
+  "policies": [
+    {
+      "name": "Cybersecurity and Computing Resources",
+      "category": "Information Security",
+      "favorite": true,
+      "version": "Version 2.0, 30 Jan 2018",
+      "status": "success",
+      "group": "pending"
+    },
+    {
+      "name": "Cybersecurity and Computing Resources",
+      "category": "Information Security",
+      "favorite": false,
+      "version": "Version 2.0, 30 Jan 2018",
+      "status": "success",
+      "group": "pending"
+    },
+    {
+      "name": "Cybersecurity and Computing Resources",
+      "category": "Information Security",
+      "favorite": false,
+      "version": "Version 2.0, 30 Jan 2018",
+      "status": "success",
+      "group": "attested"
+    },
+    {
+      "name": "Cybersecurity and Computing Resources",
+      "category": "Information Security",
+      "favorite": true,
+      "version": "Version 2.0, 30 Jan 2018",
+      "status": "success",
+      "group": "pending"
+    },
+    {
+      "name": "Cybersecurity and Computing Resources",
+      "category": "Information Security",
+      "favorite": true,
+      "version": "Version 2.0, 30 Jan 2018",
+      "status": "success",
+      "group": "pending"
+    },
+    {
+      "name": "Cybersecurity and Computing Resources",
+      "category": "Information Security",
+      "favorite": false,
+      "version": "Version 2.0, 30 Jan 2018",
+      "status": "success",
+      "group": "attested"
+    }
+  ]
+}

@@ -1,8 +1,9 @@
-<section class="cards-section">
+<section class="cards-section" *ngIf="cards?.length">
   <h1>{{name}}</h1>
 
-  <div class="cards-container" [@staggerCards]="cardsLayout" [attr.cardsLayout]="cardsLayout">
-    <ng-content></ng-content>
+  <div class="cards-container" [attr.cardsLayout]="cardsLayout" [@staggerCards]="cards?.length">
+    <m-card *ngFor="let card of cards">
+    </m-card>
   </div>
 
 </section>
