@@ -1,16 +1,9 @@
-import { Component, ContentChildren, CUSTOM_ELEMENTS_SCHEMA, DebugElement, NO_ERRORS_SCHEMA, QueryList } from '@angular/core';
-import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { Component, NO_ERRORS_SCHEMA } from '@angular/core';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { Policy } from 'app/services/model/Policy';
-import { PolicyService } from 'app/services/policy.service';
-import { of } from 'rxjs';
-import { Browser } from 'selenium-webdriver';
 import { CardComponent } from '../card/card.component';
 import { CardsContainerComponent } from '../cards-container/cards-container.component';
 import { TabItemComponent } from './tab-item/tab-item.component';
-import { TabComponent } from './tab.component'; ///
 
 
 @Component({
@@ -18,19 +11,10 @@ import { TabComponent } from './tab.component'; ///
   template: `
     <div>
       <m-tab-item>
-        <m-cards-container>
-          <m-card></m-card>
-        </m-cards-container>
       <m-tab-item>
       </m-tab-item>
-        <m-cards-container>
-          <m-card></m-card>
-        </m-cards-container>
       </m-tab-item>
       <m-tab-item>
-        <m-cards-container>
-          <m-card></m-card>
-        </m-cards-container>
       </m-tab-item>
     </div>
   `
@@ -43,20 +27,14 @@ class TabComponentMock {
 
 }
 
-
-const serviceMock = {
-  getPolicies: jest.fn().mockReturnValue(of<Policy>())
-}
-
 describe('TabComponent', () => {
   let component: TabComponentMock;
   let fixture: ComponentFixture<TabComponentMock>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [TabComponentMock, TabItemComponent, CardComponent, CardsContainerComponent],
-
-      providers: [PolicyService]
+      declarations: [TabComponentMock, TabItemComponent],
+      schemas: [NO_ERRORS_SCHEMA]
     })
       .compileComponents();
   });
@@ -75,9 +53,10 @@ describe('TabComponent', () => {
 
     let indexOfSelectedTab = null;
 
+    fixture.detectChanges();
+
     const tabItems = fixture.debugElement.queryAll(By.directive(TabItemComponent));
 
-    fixture.detectChanges();
 
     component.selectTab(tabItems[0].context)
 

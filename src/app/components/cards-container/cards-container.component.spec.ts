@@ -26,7 +26,7 @@ describe('CardsContainerComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [CardsContainerMock, CardComponent],
+      declarations: [CardsContainerMock],
       schemas: [NO_ERRORS_SCHEMA],
       imports: [BrowserAnimationsModule]
     })

@@ -1,6 +1,6 @@
-<div class="card" [id]="id">
+<div class="card" [id]="cardData.id">
   <header>
-    <label (click)="favoriteCard()" [ngClass]="{'--favorite': cardIsFavorite  }">
+    <label (click)="favoriteCard()" [ngClass]="{'--favorite': cardIsFavorite }">
       <input type="checkbox" [formControl]="checkbox">
       <img src="../../../assets/icons/star.svg" alt="Star icon">
       <span class="tooltip --visibility">
@@ -14,7 +14,7 @@
       <img src="../../../assets/icons/document.svg" alt="Document icon">
     </span>
     <div class="card-main-content">
-      <label>Information Security</label>
+      <label>{{cardData.category}}</label>
       <p>Cybersecurity and Computing Resources</p>
     </div>
   </div>

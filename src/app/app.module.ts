@@ -31,9 +31,7 @@ import { PolicyService } from './services/policy.service';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     HttpClientModule,
-
   ],
-  providers: [PolicyService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

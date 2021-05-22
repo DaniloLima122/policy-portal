@@ -1,5 +1,6 @@
 import { animate, query, stagger, style, transition, trigger } from '@angular/animations';
 import { Component, Input } from '@angular/core';
+import { Policy } from 'app/services/model/Policy';
 
 @Component({
   selector: 'm-cards-container',
@@ -23,7 +24,7 @@ export class CardsContainerComponent {
   @Input() name;
   @Input() cardsLayout;
 
-  @Input() cards = [];
+  @Input() cards: Policy[] = [];
 
   constructor() { }
 

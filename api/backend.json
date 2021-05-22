@@ -4,7 +4,7 @@
       "id": 1,
       "name": "Cybersecurity and Computing Resources",
       "category": "Information Security",
-      "favorite": true,
+      "favorite": false,
       "version": "Version 2.0, 30 Jan 2018",
       "status": "success",
       "group": "pending"
@@ -13,7 +13,7 @@
       "id": 2,
       "name": "Cybersecurity and Computing Resources",
       "category": "Information Security",
-      "favorite": false,
+      "favorite": true,
       "version": "Version 2.0, 30 Jan 2018",
       "status": "success",
       "group": "pending"
@@ -31,7 +31,7 @@
       "id": 4,
       "name": "Cybersecurity and Computing Resources",
       "category": "Information Security",
-      "favorite": true,
+      "favorite": false,
       "version": "Version 2.0, 30 Jan 2018",
       "status": "success",
       "group": "pending"

@@ -1,14 +1,41 @@
-# PolicyPortal
+<h1>Policy Portal</h1>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.8.
+<div>
 
+<img src="https://img.shields.io/static/v1?label=PRs&message=welcome&color=43bd16&labelColor=535353" />
+
+<img alt="stars" src="https://img.shields.io/github/stars/DaniloLima122/policy-portal?color=43bd16">
+
+</div>
+
+
+<br/>
+<br/>
+
+<img src="./project.png">
+
+<br/>
+# Project
+ 
+This project it's a policy portal app inspired on a layout I've found around the web built with Angular and SASS using JSON Server as fake API
+# Technologies
+- Angular
+- RxJS
+- SASS
+- JEST
+- JSON Server
+
+
+# Running project
+
+1º - Clone this project to your local machine
+2º - Install all dependencies running `npm install`
+3º - Install JSON Server running `npm install -g json-server`
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1º - First run `json-server --watch api/backend.json` to start the JSON Server fake API REST 
+2º - After run `npm start` for a dev server. 
+3º - Then navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Build
 
@@ -16,12 +43,5 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 ## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Run `npm run test` to execute the unit tests via [Jest](https://jestjs.io/pt-BR/).
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

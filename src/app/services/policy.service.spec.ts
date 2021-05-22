@@ -1,7 +1,7 @@
 
 import { HttpClientTestingModule, HttpTestingController } from "@angular/common/http/testing";
 import { fakeAsync, TestBed, tick } from '@angular/core/testing';
-import { first } from 'rxjs/operators';
+import { first, take } from 'rxjs/operators';
 import { Policy } from "./model/Policy";
 import { PolicyService } from './policy.service';
 
@@ -35,7 +35,7 @@ describe('PolicyServiceService', () => {
   });
 
   it('should return policies list', fakeAsync(() => {
-    service.getPolicies().pipe(first()).subscribe(policies => {
+    service.getPolicies().pipe(take(1)).subscribe(policies => {
       expect(policies).toEqual(PolicyMock);
     });
 
@@ -52,7 +52,7 @@ describe('PolicyServiceService', () => {
 
     const policyId = PolicyMock.id;
 
-    service.favoritePolicy(3).pipe(first()).subscribe(policy => {
+    service.favoritePolicy(3, true).pipe(take(1)).subscribe(policy => {
       expect(policy.favorite).toBeTruthy();
     });
 

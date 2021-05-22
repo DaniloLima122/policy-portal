@@ -39,17 +39,29 @@ describe('CardComponent', () => {
   });
 
   it('should favorite card', fakeAsync(() => {
+
+    component.cardIsFavorite = false;
+
+    component.cardData = {
+      id: 0,
+      favorite: false,
+      category: "",
+      group: "attested",
+      name: "",
+      status: 'danger',
+      version: ""
+    };
+
+
     const spyFavorite = jest.spyOn(component, 'favoriteCard');
+    const spyFavoriteService = jest.spyOn(serviceMock, 'favoritePolicy');
 
     const favoriteLabel: HTMLLabelElement = fixture.debugElement.query(By.css('label')).nativeElement;
 
     favoriteLabel.click();
 
-    fixture.detectChanges();
-
     expect(spyFavorite).toHaveBeenCalled();
-    expect(favoriteLabel.classList.contains('--favorite')).toBeTruthy();
-    expect(component.cardIsFavorite).toBeTruthy();
+    expect(spyFavoriteService).toHaveBeenCalled();
 
     tick();
 

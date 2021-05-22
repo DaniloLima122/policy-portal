@@ -1,6 +1,8 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { Policy } from 'app/services/model/Policy';
 import { PolicyService } from 'app/services/policy.service';
+import { take } from 'rxjs/operators';
 
 export enum cardStatus {
   SUCCESS = '--success',
@@ -13,7 +15,7 @@ export enum cardStatus {
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss']
 })
-export class CardComponent {
+export class CardComponent implements OnInit {
 
   cardIsFavorite = false;
 
@@ -25,12 +27,17 @@ export class CardComponent {
   status: cardStatus = cardStatus.STANDARD;
 
   @Input()
-  id: number;
+  cardData = {} as Policy;
 
+  ngOnInit() {
+    this.cardIsFavorite = this.cardData.favorite
+  }
 
   favoriteCard() {
-    this.cardIsFavorite = !this.checkbox.value;
-    this.policyService.favoritePolicy(this.id);
+    this.policyService
+      .favoritePolicy(this.cardData.id, !this.cardIsFavorite)
+      .pipe(take(1))
+      .subscribe(card => { this.cardIsFavorite = card.favorite; });
   }
 
   get currentCardStatus(): string {
