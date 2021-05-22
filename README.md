@@ -27,14 +27,14 @@ This project it's a policy portal app inspired on a layout I've found around the
 
 # Running project
 
-1º - Clone this project to your local machine
-2º - Install all dependencies running `npm install`
-3º - Install JSON Server running `npm install -g json-server`
+- 1º - Clone this project to your local machine
+- 2º - Install all dependencies running `npm install`
+- 3º - Install JSON Server running `npm install -g json-server`
 ## Development server
 
-1º - First run `json-server --watch api/backend.json` to start the JSON Server fake API REST 
-2º - After run `npm start` for a dev server. 
-3º - Then navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- 1º - First run `json-server --watch api/backend.json` to start the JSON Server fake API REST 
+- 2º - After run `npm start` for a dev server. 
+- 3º - Then navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Build
 
