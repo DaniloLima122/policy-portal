@@ -14,10 +14,10 @@
 
 <img src="./project.png">
 
-# Project
+## Project
  
 This project it's a policy portal app inspired on a layout I've found around the web built with Angular and SASS using JSON Server as fake API
-# Technologies
+## Technologies
 - Angular
 - RxJS
 - SASS
@@ -25,7 +25,7 @@ This project it's a policy portal app inspired on a layout I've found around the
 - JSON Server
 
 
-# Running project
+## Running project
 
 - 1º - Clone this project to your local machine
 - 2º - Install all dependencies running `npm install`
