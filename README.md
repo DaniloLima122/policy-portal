@@ -14,8 +14,6 @@
 
 <img src="./project.png">
 
-<br/>
-
 # Project
  
 This project it's a policy portal app inspired on a layout I've found around the web built with Angular and SASS using JSON Server as fake API
