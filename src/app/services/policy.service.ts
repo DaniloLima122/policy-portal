@@ -14,5 +14,9 @@ export class PolicyService {
   getPolicies(): Observable<Policy[]> {
     return this.http.get<Policy[]>(`${environment.apiUrl}/policies`);
   }
+
+  favoritePolicy(id: number): Observable<Policy> {
+    return this.http.patch<Policy>(`${environment.apiUrl}/policies/${id}`, { "favorite": true });
+  }
 }
 

@@ -1,6 +1,7 @@
 {
   "policies": [
     {
+      "id": 1,
       "name": "Cybersecurity and Computing Resources",
       "category": "Information Security",
       "favorite": true,
@@ -9,6 +10,7 @@
       "group": "pending"
     },
     {
+      "id": 2,
       "name": "Cybersecurity and Computing Resources",
       "category": "Information Security",
       "favorite": false,
@@ -17,6 +19,7 @@
       "group": "pending"
     },
     {
+      "id": 3,
       "name": "Cybersecurity and Computing Resources",
       "category": "Information Security",
       "favorite": false,
@@ -25,6 +28,7 @@
       "group": "attested"
     },
     {
+      "id": 4,
       "name": "Cybersecurity and Computing Resources",
       "category": "Information Security",
       "favorite": true,
@@ -33,6 +37,7 @@
       "group": "pending"
     },
     {
+      "id": 5,
       "name": "Cybersecurity and Computing Resources",
       "category": "Information Security",
       "favorite": true,
@@ -41,6 +46,7 @@
       "group": "pending"
     },
     {
+      "id": 6,
       "name": "Cybersecurity and Computing Resources",
       "category": "Information Security",
       "favorite": false,

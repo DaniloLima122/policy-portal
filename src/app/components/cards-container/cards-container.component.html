@@ -2,7 +2,7 @@
   <h1>{{name}}</h1>
 
   <div class="cards-container" [attr.cardsLayout]="cardsLayout" [@staggerCards]="cards?.length">
-    <m-card *ngFor="let card of cards">
+    <m-card *ngFor="let card of cards" [id]="card.id">
     </m-card>
   </div>
 

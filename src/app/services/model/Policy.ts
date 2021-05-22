@@ -5,4 +5,5 @@ export interface Policy {
   version: string;
   status: "success" | "danger" | "standard";
   group: "pending" | "attested";
+  id: number;
 }

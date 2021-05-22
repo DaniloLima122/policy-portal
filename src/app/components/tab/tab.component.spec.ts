@@ -3,6 +3,9 @@ import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testin
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { By } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { Policy } from 'app/services/model/Policy';
+import { PolicyService } from 'app/services/policy.service';
+import { of } from 'rxjs';
 import { Browser } from 'selenium-webdriver';
 import { CardComponent } from '../card/card.component';
 import { CardsContainerComponent } from '../cards-container/cards-container.component';
@@ -40,6 +43,11 @@ class TabComponentMock {
 
 }
 
+
+const serviceMock = {
+  getPolicies: jest.fn().mockReturnValue(of<Policy>())
+}
+
 describe('TabComponent', () => {
   let component: TabComponentMock;
   let fixture: ComponentFixture<TabComponentMock>;
@@ -47,10 +55,8 @@ describe('TabComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [TabComponentMock, TabItemComponent, CardComponent, CardsContainerComponent],
-      schemas: [NO_ERRORS_SCHEMA],
-      imports: [
-        BrowserAnimationsModule
-      ]
+
+      providers: [PolicyService]
     })
       .compileComponents();
   });

@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { PolicyService } from 'app/services/policy.service';
 
 export enum cardStatus {
   SUCCESS = '--success',
@@ -18,13 +19,18 @@ export class CardComponent {
 
   checkbox = new FormControl(false);
 
+  constructor(private policyService: PolicyService) { }
+
   @Input()
   status: cardStatus = cardStatus.STANDARD;
 
-  constructor() { }
+  @Input()
+  id: number;
+
 
   favoriteCard() {
     this.cardIsFavorite = !this.checkbox.value;
+    this.policyService.favoritePolicy(this.id);
   }
 
   get currentCardStatus(): string {

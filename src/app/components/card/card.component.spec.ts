@@ -1,8 +1,15 @@
 import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
+import { Policy } from 'app/services/model/Policy';
+import { PolicyService } from 'app/services/policy.service';
+import { of } from 'rxjs';
 
 import { CardComponent } from './card.component';
+
+const serviceMock = {
+  favoritePolicy: jest.fn().mockReturnValue(of<Policy>())
+}
 
 describe('CardComponent', () => {
   let component: CardComponent;
@@ -11,7 +18,12 @@ describe('CardComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [CardComponent],
-      schemas: [NO_ERRORS_SCHEMA]
+      schemas: [NO_ERRORS_SCHEMA],
+      providers: [
+        {
+          provide: PolicyService,
+          useValue: serviceMock
+        }]
     })
       .compileComponents();
   });
@@ -26,7 +38,7 @@ describe('CardComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should favorite card', () => {
+  it('should favorite card', fakeAsync(() => {
     const spyFavorite = jest.spyOn(component, 'favoriteCard');
 
     const favoriteLabel: HTMLLabelElement = fixture.debugElement.query(By.css('label')).nativeElement;
@@ -39,5 +51,7 @@ describe('CardComponent', () => {
     expect(favoriteLabel.classList.contains('--favorite')).toBeTruthy();
     expect(component.cardIsFavorite).toBeTruthy();
 
-  })
+    tick();
+
+  }))
 });
