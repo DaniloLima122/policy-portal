@@ -38,7 +38,11 @@ This project it's a policy portal app inspired on a layout I've found around the
 
 ## Build
 
+<<<<<<< HEAD
 Run `npm run build` to build the project. The build artifacts will be stored in the `dist/` directory.
+=======
+Run `npm build` to build the project. The build artifacts will be stored in the `dist/` directory.
+>>>>>>> e0faff7303c4331b8bcd29731f97d8bd7307ac92
 
 ## Running unit tests
 
